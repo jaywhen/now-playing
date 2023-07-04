@@ -20,13 +20,13 @@ export default function Home() {
           <div className="h-[170px] w-[150px] flex flex-col justify-between">
             <div className="w-full flex flex-col gap-1 self-end">
               <div
-                className="font-bold text-[32px] self-end truncate"
+                className="w-full text-end font-bold text-[32px] self-end truncate"
                 title={data.title}
               >
                 {data.title}
               </div>
               <div
-                className="text-xl self-end text-slate-800 truncate"
+                className="w-full text-end text-xl self-end text-slate-800 truncate"
                 title={data.artist}
               >
                 {data.artist}
