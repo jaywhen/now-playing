@@ -6,7 +6,17 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'playing': 'playing 0s ease 0s infinite'
+      },
+      keyframes: {
+        'playing': {
+          '0%, 100%': { height: '3px' },
+          '50%': { height: '12px' },
+        }
+      },
+    },
   },
   plugins: [],
 }

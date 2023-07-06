@@ -1,3 +1,8 @@
+import {
+  NOW_PLAYING_ENDPOINT,
+  TOKEN_ENDPOINT,
+} from "@/constants/playing.const";
+import { SpotifyData } from "@/interfaces/playing.interface";
 import axios from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 import querystring from "querystring";
@@ -7,35 +12,7 @@ const {
   SPOTIFY_CLIENT_SECRET: client_secret,
   SPOTIFY_REFRESH_TOKEN: refresh_token,
 } = process.env;
-
 const token = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
-const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
-const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
-
-export interface ISpotifyData {
-  isPlaying: boolean;
-  title: string;
-  album: string;
-  artist: string;
-  albumImageUrl: string;
-  songUrl: string;
-}
-
-export interface SpotifyData {
-  is_playing: boolean;
-  item: {
-    name: string;
-    album: {
-      name: string;
-      artists: Array<{ name: string }>;
-      images: [{ url: string }];
-    };
-    external_urls: {
-      spotify: string;
-    };
-  };
-  currently_playing_type: string;
-}
 
 const getAccessToken = async () => {
   const res = await axios.post<{ access_token: string }>(

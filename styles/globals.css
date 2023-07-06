@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.playing-bar {
+  width: 3px;
+  height: 3px;
+  margin-right: 3px;
+  background: rgb(110, 210, 183);
+  border-radius: 1.5px;
+}
+
+.bar-left {
+  animation-duration: 0.85s;
+}
+
+.bar-mid {
+  animation-duration: 1.26s;
+}
+
+.bar-right {
+  animation-duration: 0.62s;
+}
