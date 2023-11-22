@@ -59,6 +59,7 @@ export default async function spotify(
         "Cache-Control",
         "public, s-maxage=180, stale-while-revalidate=90"
       );
+
       return res.status(200).json({ isPlaying: false });
     }
 

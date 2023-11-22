@@ -21,3 +21,13 @@
 .bar-right {
   animation-duration: 0.62s;
 }
+
+.track-text {
+  width: fit-content;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
